@@ -1,0 +1,9 @@
+main {
+    height: 100px;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem;
+    font-size: 2rem;
+}
