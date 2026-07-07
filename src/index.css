@@ -6,7 +6,8 @@
 
 body {
     min-height: 100dvh;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Oswald", sans-serif;
+    line-height: 1.2;
 }
 
 nav li {
