@@ -1,4 +1,4 @@
-export const blueBarlinks = [
+export const blueBarLinks = [
     {
         id: 1,
         href: '#',
