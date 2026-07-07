@@ -121,7 +121,8 @@ footer .footer-bottom .container button:hover {
     color: #0a84ff;
 }
 
-footer .footer-bottom .container .social {
+
+footer .footer-bottom .container nav ul {
 
     display: flex;
     align-items: center;
@@ -129,17 +130,17 @@ footer .footer-bottom .container .social {
 
 }
 
-footer .footer-bottom .container .social h3 {
+footer .footer-bottom .container nav h3 {
 
     color: #0282f9;
 
 }
 
-footer .footer-bottom .container .social img {
+footer .footer-bottom .container nav img {
     cursor: pointer;
 }
 
-footer .footer-bottom .container .social img:hover {
+footer .footer-bottom .container nav img:hover {
     background-color: white;
     border-radius: 50%;
 }
