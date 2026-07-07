@@ -1,12 +1,50 @@
 .blue-bar {
-    background-color: blue;
+    position: relative;
+    z-index: 2;
+    background: #007EF5;
+    padding: 50px 0;
 }
 
-.power-visa {
-    width: 120px;
-    height: 120px;
+.blue-bar .container.blue-content {
+    width: 1300px;
+    margin: auto;
+
 }
 
-.blue-content a {
+
+.blue-bar .container.blue-content nav ul {
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    text-transform: uppercase;
+    gap: 15px;
+}
+
+
+.blue-bar .container.blue-content li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.blue-bar .container.blue-content img {
+    height: 55px;
+    width: auto;
+}
+
+.blue-bar .blue-content a {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
     color: #ffffff;
+
+}
+
+.blue-bar .blue-content a:hover {
+    color: #cdc8c8;
+}
+
+
+.blue-bar .container.blue-content .power-visa {
+    width: 55px;
+    height: auto;
 }
