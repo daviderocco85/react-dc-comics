@@ -1,72 +1,72 @@
 import './Footer.css'
 const Logo = () => <img className='logo' src="img/dc-logo-bg.png" alt='Logo' />;
-const DcComics = () => (
 
-    <section className='dccomics'>
-        <h2>DC Comics</h2>
-        <ul>
-            <li><a href="#">Characters</a></li>
-            <li><a href="#">Comics</a></li>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">Tv</a></li>
-            <li><a href="#">Games</a></li>
-            <li><a href="#">Collectibles</a></li>
-            <li><a href="#">Videos</a></li>
-            <li><a href="#">Fans</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Shop</a></li>
-        </ul>
+const menus = [
+    {
+        id: 1,
+        className: 'dccomics',
+        title: 'DC Comics',
+        links: [
+            { id: 1, href: '#', content: 'Characters' },
+            { id: 2, href: '#', content: 'Comics' },
+            { id: 3, href: '#', content: 'Movies' },
+            { id: 4, href: '#', content: 'Tv' },
+            { id: 5, href: '#', content: 'Games' },
+            { id: 6, href: '#', content: 'Videos' },
+            { id: 7, href: '#', content: 'News' }
+        ]
 
-    </section>
-);
+    },
+    {
+        id: 2,
+        className: 'dc',
+        title: 'DC',
+        links: [
+            { id: 1, href: '#', content: 'Term of Use' },
+            { id: 2, href: '#', content: 'Privacy policy (New)' },
+            { id: 3, href: '#', content: 'Ad Choises' },
+            { id: 4, href: '#', content: 'Advertising' },
+            { id: 5, href: '#', content: 'Jobs' },
+            { id: 6, href: '#', content: 'Subscriptions' },
+            { id: 7, href: '#', content: 'Talent Workshops' },
+            { id: 8, href: '#', content: 'CPSC Certificates' },
+            { id: 9, href: '#', content: 'Ratings' },
+            { id: 10, href: '#', content: 'Shop Help' },
+            { id: 11, href: '#', content: 'Contact Us' }
+        ]
 
-const Dc = () => (
+    },
+    {
+        id: 3,
+        className: 'sites',
+        title: 'Sites',
+        links: [
+            { id: 1, href: '#', content: 'DC' },
+            { id: 2, href: '#', content: 'MAD Magazine' },
+            { id: 3, href: '#', content: 'DC Kids' },
+            { id: 4, href: '#', content: 'DC Universe' },
+            { id: 5, href: '#', content: 'DC Power Visa' }
+        ]
 
-    <section className='dc'>
-        <h2>DC</h2>
-        <ul>
-            <li><a href="#">Terms Of Use</a></li>
-            <li><a href="#">Privacy policy(New)</a></li>
-            <li><a href="#">Ad Choises</a></li>
-            <li><a href="#">Advertising</a></li>
-            <li><a href="#">Jobs</a></li>
-            <li><a href="#">Subscriptions</a></li>
-            <li><a href="#">Talent Workshops</a></li>
-            <li><a href="#">CPSC Certificates</a></li>
-            <li><a href="#">Ratings</a></li>
-            <li><a href="#">Shop Help</a></li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
-
-    </section>
-);
-
-const Sites = () => (
-
-    <section className='sites'>
-        <h2>Sites</h2>
-        <ul>
-            <li><a href="#">DC</a></li>
-            <li><a href="#">MAD Magazine</a></li>
-            <li><a href="#">DC Kids</a></li>
-            <li><a href="#">DC Universe</a></li>
-            <li><a href="#">DC Power Visa</a></li>
-        </ul>
-
-    </section>
-);
+    },
+    {
+        id: 4,
+        className: 'shop',
+        title: 'Shop',
+        links: [
+            { id: 1, href: '#', content: 'Shop DC' },
+            { id: 2, href: '#', content: 'Shop DC Collectibles' }
+        ]
+    }
+]
 
 
-const Shop = () => (
-    <section className='shop'>
-        <h2>Shop</h2>
-        <ul>
-            <li><a href="#">Shop DC</a></li>
-            <li><a href="#">Shop DC Collectibles</a></li>
-        </ul>
 
-    </section>
-);
+
+
+
+
+
 
 const SignUpButton = () => (
     <button>SIGN-UP NOW!</button>
@@ -76,7 +76,7 @@ const SignUpButton = () => (
 const Social = () => (
     <div className="social">
 
-        <span>FOLLOW US</span>
+        <h3><span>FOLLOW US</span></h3>
 
         <img src="img/footer-facebook.png" alt="" />
         <img src="img/footer-twitter.png" alt="" />
@@ -92,10 +92,17 @@ export const Footer = () => (
         <div className="footer-top">
             <div className="container">
                 <div className="footer-links">
-                    <DcComics />
-                    <Dc />
-                    <Sites />
-                    <Shop />
+
+                    {menus.map(menu => (
+                        <section key={menu.id} className={menu.className}>
+                            <h2>{menu.title}</h2>
+                            <ul>
+                                {menu.links.map(link => (
+                                    <li key={link.id}><a href={link.href}>{link.content}</a></li>
+                                ))}
+                            </ul>
+                        </section>
+                    ))}
                 </div>
                 <Logo />
             </div>
