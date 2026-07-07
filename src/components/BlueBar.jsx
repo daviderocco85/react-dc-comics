@@ -1,30 +1,59 @@
 import "./BlueBar.css";
 
 
+const links = [
+    {
+        id: 1,
+        href: '#',
+        content: 'DIGITAL COMICS',
+        src: "img/buy-comics-digital-comics.png"
+    },
+    {
+        id: 2,
+        href: '#',
+        content: 'DC MERCHANDISE',
+        src: "img/buy-comics-merchandise.png"
+    },
+    {
+        id: 3,
+        href: '#',
+        content: 'SUBSCRIPTIONS',
+        src: "img/buy-comics-subscriptions.png"
+    },
+    {
+        id: 4,
+        href: '#',
+        content: 'COMIC SHOP LOCATOR',
+        src: "img/buy-comics-shop-locator.png"
+    },
+    {
+        id: 5,
+        href: '#',
+        content: 'DC POWER VISA',
+        src: "img/buy-dc-power-visa.svg"
+    },
+
+]
+
+
+
+
+
 
 const NavBlue = () => (
     <nav>
         <ul>
-            <li>
-                <img src="img/buy-comics-digital-comics.png" alt="" />
-                <a href="#"><span>DIGITAL COMICS</span></a>
-            </li>
-            <li>
-                <img src="img/buy-comics-merchandise.png" alt="" />
-                <a href="#"><span>DC MERCHANDISE</span></a>
-            </li>
-            <li>
-                <img src="img/buy-comics-subscriptions.png" alt="" />
-                <a href="#"><span>SUBSCRIPTIONS</span></a>
-            </li>
-            <li>
-                <img src="img/buy-comics-shop-locator.png" alt="" />
-                <a href="#"><span>COMIC SHOP LOCATOR</span></a>
-            </li>
-            <li>
-                <img src="img/buy-dc-power-visa.svg" className="power-visa" alt="" />
-                <a href="#"> <span>DC POWER VISA</span></a>
-            </li>
+            {links.map(link => (
+                <li key={link.id}>
+                    <img
+                        src={link.src}>
+                    </img>
+                    <a
+                        href={link.href}
+                    >{link.content}
+                    </a>
+                </li>
+            ))}
         </ul>
     </nav>
 );
