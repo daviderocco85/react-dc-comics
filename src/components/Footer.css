@@ -1,0 +1,145 @@
+footer .footer-top {
+    position: relative;
+    background-image: url('img/footer-bg.jpg');
+    background-color: #303030;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+
+footer .footer-top .container {
+    display: flex;
+    max-width: 1200px;
+    /* margin: 0 auto;*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer-top .container .logo {
+    position: absolute;
+    right: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 520px;
+    z-index: 1;
+}
+
+
+footer .footer-top .container .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto auto;
+    padding: 59px 220px;
+    gap: 40px;
+}
+
+footer .footer-top .container .footer-links .dccomics {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+footer .footer-top .container .footer-links .shop {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+footer .footer-top .container .footer-links .dc {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+footer .footer-top .container .footer-links .sites {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+
+
+
+
+footer .footer-top .container .footer-links h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+
+footer .footer-top .container .footer-links section a {
+    color: #948f8f;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+}
+
+footer .footer-top .container .footer-links section a:hover {
+    color: white;
+}
+
+
+footer .footer-top .container .footer-links section li {
+    list-style: none;
+}
+
+
+
+
+
+footer .footer-bottom .container {
+    position: relative;
+    background: #303030;
+    width: 100%;
+    height: 130px;
+    align-items: center;
+    display: flex;
+    gap: 450px;
+    justify-content: space-around;
+    z-index: 2;
+
+}
+
+
+
+
+
+footer .footer-bottom .container button {
+
+    padding: 15px 25px;
+    background: none;
+    border: 2px solid #0282f9;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+
+
+}
+
+
+footer .footer-bottom .container button:hover {
+    color: #0a84ff;
+}
+
+footer .footer-bottom .container .social {
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+footer .footer-bottom .container .social h3 {
+
+    color: #0282f9;
+
+}
+
+footer .footer-bottom .container .social img {
+    cursor: pointer;
+}
+
+footer .footer-bottom .container .social img:hover {
+    background-color: white;
+    border-radius: 50%;
+}
