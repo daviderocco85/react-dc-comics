@@ -1,5 +1,7 @@
 import './Footer.css'
 import { footerTopLinks } from "../data/footerTopLinks.js";
+import { footerBottomNavLinks } from "../data/footerBottomNavLinks.js";
+
 const Logo = () => <img className='logo' src="img/dc-logo-bg.png" alt='Logo' />;
 
 
@@ -9,18 +11,28 @@ const SignUpButton = () => (
 );
 
 
-const Social = () => (
-    <div className="social">
+const NavSocial = () => (
 
-        <h3><span>FOLLOW US</span></h3>
+    <nav>
+        <ul>
+            <h3><span>FOLLOW US</span></h3>
+            {footerBottomNavLinks.map(footerBottomLink => (
+                <li key={footerBottomLink.id}>
+                    <a
+                        href={footerBottomLink.href}
 
-        <img src="img/footer-facebook.png" alt="" />
-        <img src="img/footer-twitter.png" alt="" />
-        <img src="img/footer-youtube.png" alt="" />
-        <img src="img/footer-pinterest.png" alt="" />
-        <img src="img/footer-periscope.png" alt="" />
+                    >
+                        <img
+                            src={footerBottomLink.src}
+                            alt={footerBottomLink.alt}
+                        >
+                        </img>
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </nav>
 
-    </div>
 );
 
 export const Footer = () => (
@@ -46,7 +58,7 @@ export const Footer = () => (
         <div className="footer-bottom">
             <div className="container">
                 <SignUpButton />
-                <Social />
+                <NavSocial />
             </div>
         </div>
     </footer>
