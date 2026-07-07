@@ -1,19 +1,19 @@
 import "./BlueBar.css";
-import { blueBarlinks } from "../data/blueBarLinks.js";
+import { blueBarLinks } from "../data/blueBarLinks.js";
 
 
 
 const NavBlue = () => (
     <nav>
         <ul>
-            {blueBarlinks.map(blueBarlink => (
-                <li key={blueBarlink.id}>
+            {blueBarLinks.map(blueBarLink => (
+                <li key={blueBarLink.id}>
                     <img
-                        src={blueBarlink.src}>
+                        src={blueBarLink.src}>
                     </img>
                     <a
-                        href={blueBarlink.href}
-                    >{blueBarlink.content}
+                        href={blueBarLink.href}
+                    >{blueBarLink.content}
                     </a>
                 </li>
             ))}
