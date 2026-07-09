@@ -1,32 +1,35 @@
 import "./BlueBar.css";
-import { blueBarLinks } from "../data/blueBarLinks.js";
 
 
 
-const NavBlue = () => (
-    <nav>
-        <ul>
-            {blueBarLinks.map(blueBarLink => (
-                <li key={blueBarLink.id}>
-                    <img
-                        src={blueBarLink.src}>
-                    </img>
-                    <a
-                        href={blueBarLink.href}
-                    >{blueBarLink.content}
-                    </a>
-                </li>
-            ))}
-        </ul>
-    </nav>
+const NavBlueLink = props => (
+
+    <li>
+        <img
+            src={props.link.src}>
+        </img>
+        <a
+            href={props.link.href}
+        >{props.link.content}
+        </a>
+    </li>
+
 );
 
-export const BlueBar = () => (
+
+export const BlueBar = props => (
 
     <section className="blue-bar">
         <div className="container blue-content">
-            <NavBlue />
+            <nav>
+                <ul>
+                    {props.links.map(link => <NavBlueLink key={link.id} link={link} />)}
+                </ul>
+            </nav>
         </div>
     </section>
 
 );
+
+
+
