@@ -1,56 +1,59 @@
 import './Footer.css'
-import { footerTopLinks } from "../data/footerTopLinks.js";
-import { footerBottomNavLinks } from "../data/footerBottomNavLinks.js";
+
 
 const Logo = () => <img className='logo' src="img/dc-logo-bg.png" alt='Logo' />;
 
 
+
+const FooterSectionLink = props => (
+
+    <li><a href={props.link.href}>{props.link.content}</a></li>
+);
+
+
+const FooterSection = props => (
+
+    <section className={props.link.className}>
+        <h2>{props.link.title}</h2>
+        <ul>
+            {props.link.links.map(item => <FooterSectionLink key={item.id} link={item} />)}
+        </ul>
+    </section>
+
+);
+
+
+
+const NavSocialLink = props => (
+
+    <li>
+        <a
+            href={props.link.href}
+
+        >
+            <img
+                src={props.link.src}
+                alt={props.link.alt}
+            >
+            </img>
+        </a>
+    </li>
+
+);
 
 const SignUpButton = () => (
     <button>SIGN-UP NOW!</button>
 );
 
 
-const NavSocial = () => (
 
-    <nav>
-        <ul>
-            <h3><span>FOLLOW US</span></h3>
-            {footerBottomNavLinks.map(footerBottomLink => (
-                <li key={footerBottomLink.id}>
-                    <a
-                        href={footerBottomLink.href}
-
-                    >
-                        <img
-                            src={footerBottomLink.src}
-                            alt={footerBottomLink.alt}
-                        >
-                        </img>
-                    </a>
-                </li>
-            ))}
-        </ul>
-    </nav>
-
-);
-
-export const Footer = () => (
+export const Footer = (props) => (
     <footer>
         <div className="footer-top">
             <div className="container">
                 <div className="footer-links">
 
-                    {footerTopLinks.map(footerTop => (
-                        <section key={footerTop.id} className={footerTop.className}>
-                            <h2>{footerTop.title}</h2>
-                            <ul>
-                                {footerTop.links.map(link => (
-                                    <li key={link.id}><a href={link.href}>{link.content}</a></li>
-                                ))}
-                            </ul>
-                        </section>
-                    ))}
+                    {props.linksTop.map(linkTop => <FooterSection key={linkTop.id} link={linkTop} />)}
                 </div>
                 <Logo />
             </div>
@@ -58,8 +61,16 @@ export const Footer = () => (
         <div className="footer-bottom">
             <div className="container">
                 <SignUpButton />
-                <NavSocial />
+                <nav>
+                    <ul>
+                        <h3><span>FOLLOW US</span></h3>
+                        {props.linksBottom.map(linkBottom => <NavSocialLink key={linkBottom.id} link={linkBottom} />)}
+                    </ul>
+                </nav>
             </div>
         </div>
     </footer>
 );
+
+
+
