@@ -5,7 +5,6 @@ import './Header.css';
 const Logo = () => <img className='logo' src="img/dc-logo.png" alt='Logo' />
 
 
-
 const NavLink = props => (
 
     <li>
